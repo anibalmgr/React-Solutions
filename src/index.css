@@ -8,9 +8,3 @@ body {
   display: grid;
   padding: 5rem;
 }
-
-
-.buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}

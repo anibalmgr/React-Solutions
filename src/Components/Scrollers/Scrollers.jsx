@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+import React, { useState, useEffect, useRef } from 'react';
+import './scrollers.css';
+import Scroller from './Scroller';
 
-function Effects() {
+function Scrollers() {
   const [count, setCount] = useState(0);
   const [styles, setStyles] = useState({
     backgroundColor: "Pink",
@@ -17,23 +18,36 @@ function Effects() {
 }
 
 
-  function handleClick(e) {
+function handleClick(e) {
     setCount(count + 1);
     let whereToScroll = e.target.value;
 
     setStyles({
       transition: "background-color 1s ease",
-      backgroundColor: getRandomColor(),
-      height: "2000px"
+      backgroundColor: getRandomColor()
     });
+
+
     window.scrollTo({
+      top: whereToScroll,
+      behavior: "auto"
+    });
+  }
+
+const thirdRef = useRef();
+
+function handleThirdClick(e) {
+  handleClick(e)
+  let whereToScroll = e.target.value;
+
+    thirdRef.current.scrollTo({
       top: whereToScroll,
       behavior: "smooth"
     });
   }
 
   // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
+useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
     document.body.style.backgroundColor = getRandomColor();
@@ -43,15 +57,12 @@ function Effects() {
     <div>
       <p>You clicked {count} times</p>
       <div className="buttons" style={styles}>
-        <button value="0" onClick={handleClick}>
-          <h1>Click me</h1>
-        </button>
-        <button value="1000" onClick={handleClick}>
-          <h1>Click me</h1>
-        </button>
+        <Scroller styleClass="first" text="go to the top" value="0" onClick={handleClick}/>
+        <Scroller styleClass="second" text="go to the bottom" value="1000" onClick={handleClick}/>
+        <Scroller setRef={thirdRef} styleClass="third" text="go to my bottom" text2="go to my top" value="1000" value2="0" onClick={handleThirdClick}/>
       </div>
     </div>
   );
 }
 
-export default Effects;
+export default Scrollers;

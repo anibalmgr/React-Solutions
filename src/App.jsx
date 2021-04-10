@@ -3,14 +3,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
-import Menu from './Menu';
-import Home from './Home';
-import Effects from './Effects';
-import MouseTracker from './Mouse';
+import Menu from './Components/Menu';
+import Home from './Components/Home';
+import Scrollers from './Components/Scrollers';
+import MouseTracker from './Components/Mouse';
+import './index.css';
 
 
 
@@ -20,8 +18,8 @@ export default function App() {
       <div>
       <Menu />
       <Switch>
-        <Route path="/effects">
-          <Effects />
+        <Route path="/scrollers">
+          <Scrollers />
         </Route>
         <Route path="/mouse">
           <MouseTracker />

@@ -1,0 +1,30 @@
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.scroller {
+  max-height: 120vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-left: black solid 1px;
+}
+
+.scroller button{
+  font-family: 'Source Code Pro', monospace;
+}
+
+.third {
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+
+.third button {
+  margin: 50px;
+}
+
+.placeholder {
+  height: 200vh;
+}

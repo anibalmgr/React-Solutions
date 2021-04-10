@@ -10,7 +10,7 @@ return (
       <Link to="/">Home</Link>
     </li>
     <li>
-      <Link to="/effects">Effects</Link>
+      <Link to="/scrollers">Scrollers</Link>
     </li>
     <li>
       <Link to="/mouse">Mouse</Link>
