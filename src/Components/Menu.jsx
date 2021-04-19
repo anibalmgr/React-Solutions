@@ -10,6 +10,9 @@ return (
       <Link to="/">Home</Link>
     </li>
     <li>
+      <Link to="/springs">Springs</Link>
+    </li>
+    <li>
       <Link to="/scrollers">Scrollers</Link>
     </li>
     <li>

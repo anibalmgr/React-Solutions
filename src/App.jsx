@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Menu from './Components/Menu';
 import Home from './Components/Home';
+import Springs from './Components/Springs';
 import Scrollers from './Components/Scrollers';
 import MouseTracker from './Components/Mouse';
 import './index.css';
@@ -23,6 +24,9 @@ export default function App() {
         </Route>
         <Route path="/mouse">
           <MouseTracker />
+        </Route>
+        <Route path="/springs">
+          <Springs />
         </Route>
         <Route path="/">
           <Home />

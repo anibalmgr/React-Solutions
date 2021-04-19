@@ -1,8 +1,9 @@
-import cat from './cat.svg'
+import cat from './cat.svg';
+import robot from './robot.svg';
 
 const svg = {
-  cat
+  cat,
+  robot
 }
-
 
 export default svg;
