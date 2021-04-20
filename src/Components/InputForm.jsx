@@ -26,7 +26,7 @@ function InputForm(props) {
   }
 
   let extraFStyle = props.fStyle ? props.fStyle : "";
-  let extraBStyle = props.bStyle ? props.bStyle : "";
+  // let extraBStyle = props.bStyle ? props.bStyle : "";
 
   const formStyle = {
     minWidth: "150px",

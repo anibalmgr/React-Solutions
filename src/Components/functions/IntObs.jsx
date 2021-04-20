@@ -1,38 +1,36 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useLayoutEffect, useRef } from 'react';
 import { useSpring } from "@react-spring/web";
 
-function useIntObs(ref) {
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1
-  }
+function useIntObs() {
 
   const itemRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
 
   function callbackFunction(entries) {
       const [ entry ] = entries;
       setIsVisible(entry.isIntersecting);
   }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options)
-    if (itemRef.current) observer.observe(itemRef.current)
+  useLayoutEffect(() => {
+      const localRef = itemRef;
+      const options = { root: null, rootMargin: "0px", threshold: 1 }
+      const observer = new IntersectionObserver(callbackFunction, options)
+      if (localRef.current) observer.observe(localRef.current)
 
-    return () => {
-      if(itemRef.current) observer.unobserve(itemRef.current)
-    }
-  }, [itemRef, options])
+      return () => {
+        if(localRef.current) observer.unobserve(localRef.current)
+      }
+
+  }, [])
 
   return [itemRef, isVisible];
 }
 
-function useAppear(...extraStyle) {
+function useAppearWithSprings() {
     const [itemRef, isVisible] = useIntObs();
-    const style = useSpring({...extraStyle, opacity: isVisible ? 1 : 0});
+    const style = useSpring({opacity: isVisible ? 1 : 0});
     return [itemRef, style];
   }
 
-export { useIntObs, useAppear };
+export { useIntObs, useAppearWithSprings };
