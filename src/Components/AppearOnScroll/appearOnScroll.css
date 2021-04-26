@@ -1,0 +1,27 @@
+.scroll-appear {
+    max-height: 90vh;
+}
+
+.aos {
+    transform: translateY(10vh);
+    opacity: 0;
+}
+
+.aos-entered {
+  transition-property: transform, opacity;
+  transition-duration: 1s, 1.5s;
+  transform: translateY(0);
+}
+
+.cat {
+  justify-self: left;
+  width: 5vw;
+  max-height: 20vh;
+  padding-left: 10vw;
+}
+
+h3 {
+  text-align: center;
+  padding: 5vw;
+  color: white;
+}

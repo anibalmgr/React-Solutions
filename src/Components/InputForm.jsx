@@ -12,7 +12,7 @@ function InputForm(props) {
   function saveText(e) {
     const { name, value } = e.target;
 
-    setInput(prevText => {
+    value > 0 && setInput(prevText => {
       return {
         ...prevText,
         [name]: value
@@ -33,15 +33,13 @@ function InputForm(props) {
     maxWidth: "10vw",
     display: "grid",
     gridTemplateColumns: "1fr",
-    gridGap: "2px",
     ...extraFStyle
   }
 
   const buttonStyle = {
     outline: "none",
     background: "lightgray",
-    borderTop: "1px solid black",
-    border: "none",
+    border: "violet solid 5px",
     opacity: "0.8"
   }
 
@@ -51,9 +49,9 @@ function InputForm(props) {
         {props.number && <input style={buttonStyle} name="number" value={input.number} onChange={saveText} type="number" />}
           <button style={buttonStyle} onClick={() => {
           props.onAdd(input);
-          setInput({    text: "", number: ""})
+          setInput({    text: "", number: input.number})
         }}
-        >Add</button>
+        >{props.buttonText}</button>
 
       </form>
         )
