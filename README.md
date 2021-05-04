@@ -1,6 +1,8 @@
-# Playground
+# React Solutions
 
-Here I try code and features that I am learning. I started with some very simple react router features and I thought I can just make a new react module for every new thing that I want to try. I'll try to keep things organised so it can be, hopefully, useful for others.
+This repository is a collection of pieces of code, mainly React.js components and hooks.
+
+The idea is to keep track and improve practical solutions found during the process of developing websites.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
