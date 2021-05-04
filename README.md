@@ -6,11 +6,11 @@ The idea is to keep track and improve practical solutions found during the proce
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Scrollers
+## [Scrollers](/src/Components/Scrollers)
 
-Here I was trying [useEffect](https://reactjs.org/docs/hooks-effect.html) to scroll to the top, but the actual implementation of this is in a website using ReactRouter and the scroll element isn't the window DOM element but a div that wrapped the content of the page, so the header and footer are always visible. I needed a simpler environment to try that before to implement it in the real project.
+A few ways to use [useEffect](https://reactjs.org/docs/hooks-effect.html) and the browser API to scroll onClick.
 
-This page has three divs with a button, the first and the second use a function to scroll to the top and bottom of the windows:
+This solution has three <div>s with a button, the first and the second use a function to scroll to the top and bottom of the windows:
 
 ```javascript
 window.scrollTo({
@@ -19,7 +19,7 @@ window.scrollTo({
 });
 ```
 
-The third div has a scrollbar, to access it I used
+The third div has its own scrollbar:
 
 ```javascript
 
@@ -33,6 +33,8 @@ thirdRef.current.scrollTo({
 });
 }
 ```
+
+This is a [Code Sandbox](https://codesandbox.io/s/scrollers-865zb) of this component
 
 ## Mouse
 
