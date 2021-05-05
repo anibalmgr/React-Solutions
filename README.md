@@ -12,8 +12,8 @@ Three approaches to make scroll based animations with React [Hooks](https://reac
 
 | Hooks                           | Description   |
 |--------------------------       | -------------|
-|[useIntersectionObserver ](/src/Components/Hooks/IntersectionObserver.jsx)      |Detects when an objects appears for the first time using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value |
-|[useIntersectionObserverVisible](/src/Components/Hooks/IntersectionObserver.jsx)  |Detects if an objects is visible using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value. |
+|[useIntersectionObserver ](/src/Components/Hooks/useIntersectionObserver.jsx)      |Detects when an objects appears for the first time using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value |
+|[useIntersectionObserverVisible](/src/Components/Hooks/useIntersectionObserver.jsx)  |Detects if an objects is visible using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value. |
 |[useBoundingClientRect](/src/Components/Hooks/useBoundingClientRect.jsx)       |Detects is an object is visible using [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect). Takes a ref and returns a Boolean value. |
 |[useAppearWithCss](/src/Components/Hooks/IntObsWithCss.jsx)                |Returns a ref and a a css class indicating if the ref element is visible. Calls useIntersectionObserver to get the ref and the bolean value|
 |[useAppearSpringsBCR](/src/Components/Hooks/AppearWithSprings.jsx)           |Returns a React Spring Style object, takes a ref and a style object, calls useBoundingClientRect to get a boolean value |
