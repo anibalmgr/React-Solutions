@@ -7,7 +7,12 @@ import {animated} from "@react-spring/web";
 import svg from '../../svg';
 import ManyCats from './ManyCats';
 // React hooks
-import { useIntersectionObserver, useBoundingClientRect, useAppearWithCss, useAppearSpringsBCR, useAppearSpringsIntObs } from '../Hooks';
+import { 
+  useIntersectionObserverVisible,
+  useBoundingClientRect,
+  useAppearWithCss,
+  useAppearSpringsBCR,
+  useAppearSpringsIntObs } from '../Hooks';
 
 // Styles
 import './appearOnScroll.css';
@@ -15,7 +20,7 @@ import './appearOnScroll.css';
 function AppearOnScroll() {
 
   // A ref and a boolean if the first <div> is visible.
-  const [aniDivRef1, visibility] = useIntersectionObserver();
+  const [aniDivRef1, visibility] = useIntersectionObserverVisible();
   // A ref and the react-spring style for the second div.
   const [aniDivRef2, style2] = useAppearSpringsIntObs(),
         [robotRef3, rStyle3] = useAppearSpringsIntObs();

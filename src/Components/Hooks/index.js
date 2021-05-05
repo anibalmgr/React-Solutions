@@ -4,4 +4,4 @@ import useAppearWithCss from './IntObsWithCss';
 import { useAppearSpringsBCR, useAppearSpringsIntObs } from './AppearWithSprings';
 
 
-export { useIntersectionObserver, useBoundingClientRect, useAppearWithCss, useAppearSpringsBCR, useAppearSpringsIntObs };
+export { useIntersectionObserver, useIntersectionObserverVisible, useBoundingClientRect, useAppearWithCss, useAppearSpringsBCR, useAppearSpringsIntObs };

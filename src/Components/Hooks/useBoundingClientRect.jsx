@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 function useBoundingClientRect(itemRef) {
   const [isVisible, setIsVisible] = useState(false);

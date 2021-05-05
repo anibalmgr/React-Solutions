@@ -1,7 +1,6 @@
-import { useState, useLayoutEffect, useRef } from 'react';
 import { useSpring } from "@react-spring/web";
 
-import { useIntersectionObserver, useIntersectionObserverVisible } from './useIntersectionObserver';
+import { useIntersectionObserverVisible } from './useIntersectionObserver';
 import useBoundingClientRect from './useBoundingClientRect';
 
 

@@ -1,4 +1,3 @@
-import { useState, useLayoutEffect, useRef } from 'react';
 import { useIntersectionObserver } from './useIntersectionObserver';
 
 function useAppearWithCss() {
