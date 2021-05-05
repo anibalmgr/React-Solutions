@@ -6,18 +6,18 @@ The idea is to keep track and improve practical solutions found during the proce
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Scroll Based Animations
+## 1. Scroll Based Animations
 
 Three approaches to make scroll based animations with React [Hooks](https://reactjs.org/docs/hooks-intro.html). In all there is a hook that detects if an element is visible and then a second hook that calls the first function and that animates it, the logic is split to make it more easily reusable. The first two examples use [React-Spring](https://react-spring.io/), the third is just a simpler version of the second using a CSS class. This was the journey to achieve it.
 
 | Hooks                           | Description   |
-|--------------------------       | -------------:|
-|useIntersectionObserver         |Detects when an objects appears for the first time using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value |
-|useIntersectionObserverVisible  |Detects if an objects is visible using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value. |
-|useBoundingClientRect           |Detects is an object is visible using [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect). Takes a ref and returns a Boolean value. |
-|useAppearWithCss                |Returns a ref and a a css class indicating if the ref element is visible. Calls useIntersectionObserver to get the ref and the bolean value|
-|useAppearSpringsBCR             |Returns a React Spring Style object, takes a ref and a style object, calls useBoundingClientRect to get a boolean value |
-|useAppearSpringsIntObs          |Takes no arguments, returns a React Spring style object and a ref. Calls useIntersectionObserverVisible to get a ref and a boolean value |
+|--------------------------       | -------------|
+|[useIntersectionObserver ](/src/Components/Hooks/IntersectionObserver.jsx)      |Detects when an objects appears for the first time using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value |
+|[useIntersectionObserverVisible](/src/Components/Hooks/IntersectionObserver.jsx)  |Detects if an objects is visible using the Intersection Observer API. Takes no arguments and returns a React ref and a Boolean value. |
+|[useBoundingClientRect](/src/Components/Hooks/useBoundingClientRect.jsx)       |Detects is an object is visible using [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect). Takes a ref and returns a Boolean value. |
+|[useAppearWithCss](/src/Components/Hooks/IntObsWithCss.jsx)                |Returns a ref and a a css class indicating if the ref element is visible. Calls useIntersectionObserver to get the ref and the bolean value|
+|[useAppearSpringsBCR](/src/Components/Hooks/AppearWithSprings.jsx)           |Returns a React Spring Style object, takes a ref and a style object, calls useBoundingClientRect to get a boolean value |
+|[useAppearSpringsIntObs](/src/Components/Hooks/AppearWithSprings.jsx)          |Takes no arguments, returns a React Spring style object and a ref. Calls useIntersectionObserverVisible to get a ref and a boolean value |
 
 ### [Solution 1:](/src/Components/Hooks/Visibility.jsx)
 This first solution gets a  useVisibility() hook and then useAnimation().
