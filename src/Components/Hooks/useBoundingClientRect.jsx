@@ -1,8 +1,6 @@
-import { useState, useLayoutEffect } from "react";
-import { useSpring } from "@react-spring/web";
+import React, { useState, useLayoutEffect } from 'react';
 
-
-function useVisibility(itemRef) {
+function useBoundingClientRect(itemRef) {
   const [isVisible, setIsVisible] = useState(false);
 
   useLayoutEffect(() => {
@@ -19,11 +17,4 @@ function useVisibility(itemRef) {
   return isVisible;
 }
 
-function useAnimation(itemRef, extraStyle) {
-    const item = useVisibility(itemRef);
-    const style = useSpring({...extraStyle, opacity: item ? 1 : 0});
-    return style;
-  }
-
-
-export { useVisibility, useAnimation };
+export default useBoundingClientRect;

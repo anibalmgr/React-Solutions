@@ -7,7 +7,7 @@ import {animated} from "@react-spring/web";
 import svg from '../../svg';
 import ManyCats from './ManyCats';
 // React hooks
-import { useVisibility, useAnimation, useIntObs, useAppearWithSprings, useAppearWithCss } from '../Hooks';
+import { useIntersectionObserver, useBoundingClientRect, useAppearWithCss, useAppearSpringsBCR, useAppearSpringsIntObs } from '../Hooks';
 
 // Styles
 import './appearOnScroll.css';
@@ -15,10 +15,10 @@ import './appearOnScroll.css';
 function AppearOnScroll() {
 
   // A ref and a boolean if the first <div> is visible.
-  const [aniDivRef1, visibility] = useIntObs();
+  const [aniDivRef1, visibility] = useIntersectionObserver();
   // A ref and the react-spring style for the second div.
-  const [aniDivRef2, style2] = useAppearWithSprings(),
-        [robotRef3, rStyle3] = useAppearWithSprings();
+  const [aniDivRef2, style2] = useAppearSpringsIntObs(),
+        [robotRef3, rStyle3] = useAppearSpringsIntObs();
   // A ref and a CSS class for the third div.
   const [aniDivRef3, class3] = useAppearWithCss();
 
@@ -48,10 +48,10 @@ function AppearOnScroll() {
   }
 
   // React spring style for the first <div>.
-  let div1vis = useVisibility(aniDivRef1);
+  let div1vis = useBoundingClientRect(aniDivRef1);
 
 
-  let style1 = useAnimation(aniDivRef1, divstyle);
+  let style1 = useAppearSpringsBCR(aniDivRef1, divstyle);
 
 
   const boxStyle = {

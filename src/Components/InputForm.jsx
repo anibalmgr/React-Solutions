@@ -6,13 +6,12 @@ function InputForm(props) {
     key: "",
     id: "",
     text: "",
-    number: 0
+    number: props.number
   });
 
   function saveText(e) {
     const { name, value } = e.target;
-
-    value > 0 && setInput(prevText => {
+    value >= 0 && setInput(prevText => {
       return {
         ...prevText,
         [name]: value
@@ -46,7 +45,7 @@ function InputForm(props) {
     return (
       <form style={formStyle} onSubmit={preventDefault}>
         {props.text && <input style={buttonStyle} name="text" placeholder="Text" value={input.text} onChange={saveText}/>}
-        {props.number && <input style={buttonStyle} name="number" value={input.number} onChange={saveText} type="number" />}
+        {(props.number || props.number === 0) && <input style={buttonStyle} name="number" value={input.number} onChange={saveText} type="number" />}
           <button style={buttonStyle} onClick={() => {
           props.onAdd(input);
           setInput({    text: "", number: input.number})

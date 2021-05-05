@@ -6,7 +6,7 @@ import svg from '../../svg';
 
 
 function ManyCats(props) {
-  const [cats, setCats] = useState(10);
+  const [cats, setCats] = useState(1);
   const [catsRef, catsClass] = useAppearWithCss();
 
   const catsStyle = {
@@ -17,7 +17,7 @@ function ManyCats(props) {
 
   function addCats(e) {
     const newCats = parseInt(e.number);
-    newCats > 0 && setCats(newCats);
+    newCats >= 0 && setCats(newCats);
   }
 
   let catsArray = [...Array(cats)];
