@@ -6,7 +6,7 @@ The idea is to keep track and improve practical solutions found during the proce
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## [1. Scroll Based Animations](/src/Components/AppearOnScroll)
+## [1. Scroll Based Animations](/src/Components/Playground/AppearOnScroll)
 
 Three approaches to make scroll based animations with React [Hooks](https://reactjs.org/docs/hooks-intro.html). In all there is a hook that detects if an element is visible and then a second hook that calls the first function and that animates it, the logic is split to make it more easily reusable. The first two examples use [React-Spring](https://react-spring.io/), the third is just a simpler version of the second using a CSS class. This was the journey to achieve it.
 
@@ -35,7 +35,7 @@ This solution is based in the second one, but is more practical and simple. Firs
 This is a [Code Sandbox](https://codesandbox.io/s/appear-onscroll-0wldq?file=/src/AppearOnScroll.jsx) of this solution.
 
 
-## [2. Scrollers](/src/Components/Scrollers)
+## [2. Scrollers](/src/Components/Playground/Scrollers)
 
 A few ways to use [useEffect](https://reactjs.org/docs/hooks-effect.html) and the Web API to scroll to the top onClick.
 
@@ -65,6 +65,6 @@ thirdRef.current.scrollTo({
 
 This is a [Code Sandbox](https://codesandbox.io/s/scrollers-865zb) of this component.
 
-## [Mouse](/src/Components/Scrollers)
+## [Mouse](/src/Components/Playground/Scrollers)
 
 A work in progress solution to add a custom shadow that follows the mouse. This solution is actually bases an example about how to use [Render Props](https://reactjs.org/docs/render-props.html) in the React website, but I updated the example to use [Hooks](https://reactjs.org/docs/hooks-intro.html), so this solution doesn't actually use Render Props. There is still room to improve and simplify it.

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import InputForm from '../InputForm';
+import InputForm from '../../InputForm';
 import './appearOnScroll.css';
-import { useAppearWithCss } from '../Hooks';
-import svg from '../../svg';
+import { useAppearWithCss } from '../../Hooks';
+import svg from '../../../svg';
 
 
 function ManyCats(props) {

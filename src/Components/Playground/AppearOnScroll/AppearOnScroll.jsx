@@ -4,15 +4,15 @@ import React from "react";
 import {animated} from "@react-spring/web";
 
 // Images
-import svg from '../../svg';
+import svg from '../../../svg';
 import ManyCats from './ManyCats';
 // React hooks
-import { 
+import {
   useIntersectionObserverVisible,
   useBoundingClientRect,
   useAppearWithCss,
   useAppearSpringsBCR,
-  useAppearSpringsIntObs } from '../Hooks';
+  useAppearSpringsIntObs } from '../../Hooks';
 
 // Styles
 import './appearOnScroll.css';

@@ -1,14 +1,12 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Menu from './Components/Menu';
-import Home from './Components/Home';
-import AppearOnScroll from './Components/AppearOnScroll';
-import Scrollers from './Components/Scrollers';
-import MouseTracker from './Components/Mouse';
+import { BrowserRouter as Router } from "react-router-dom";
+
+// Components
+import Header from './Components/Header';
+import Playground from './Components/Playground';
+
+
+// Styles
 import './index.css';
 
 
@@ -16,23 +14,8 @@ import './index.css';
 export default function App() {
   return (
     <Router>
-      <div>
-      <Menu />
-      <Switch>
-        <Route path="/scrollers">
-          <Scrollers />
-        </Route>
-        <Route path="/mouse">
-          <MouseTracker />
-        </Route>
-        <Route path="/appearonscroll">
-          <AppearOnScroll />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+      <Header />
+      <Playground />
     </Router>
   );
 }

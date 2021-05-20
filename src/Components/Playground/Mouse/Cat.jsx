@@ -1,5 +1,5 @@
 import React from 'react';
-import svg from '../../svg';
+import svg from '../../../svg';
 
 
 function Cat(props) {
